@@ -63,6 +63,7 @@
   - Path to HTML -> `/usr/share/nginx/html/index.html`
 
 **To copy in a `index.html` file into the running container:**
-- `docker cp filepath/filename <container_id>:usr/share/nginx/html/index.html` 
+Make sure to specify the file at the end to overwrite it!
+- `docker cp filepath/filename <container_id>:filepath/filename` 
 - e.g.:
 - `docker cp index.html 13f11cef9fcd:usr/share/nginx/html/index.html`
