@@ -21,3 +21,17 @@
 - Docker is light weight and user friendly 
 - Docker shares the resources of OS as opposed to using the OS completely 
 - Docker engine connects the container with OS and only uses the resources required
+- VM works with Hypervisor to connect guest OS/VM with Host OS/server
+
+## Docker Commands
+- `docker pull <name_of_image>` 
+- `docker run <name_of_image> or hello-world` -> To see docker installation running correctly
+- `docker build -t <name_of_image>`
+- `docker commit <name_of_image/container_id>`  
+- `docker start <name_of_image/container_id>`
+- `docker stop <name_of_image/container_id>`
+- `docker rm <name_of_image/container_id>`
+- `docker ps and ps -a <name_of_image/container_id>` -> to check the existing containers like `ls` !!!
+
+## Logging into a running container 
+- `docker exec -it <name_of_image/container_id>` -> Go inside the container very similar to `vagrant up and ssh into that vm` -> ***MUCH FASTER*** THAN vagrant 
