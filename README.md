@@ -99,3 +99,20 @@
 
 - To save logs in a file on localhost:
   - `docker logs <container_id> >> nginx_logs.txt`
+
+## Creating a Docker image
+- To build a docker image we need to create a Dockerfile (Naming convention Dockerfile)
+  - Why? - To automate the tasks in an image/container
+  - What information is required inside the Dockerfile
+  - It depends on the clients requirements
+  - We need to know the dependencies to run the app/db
+  - We need to wrap up all the dependencies in our Dockerfile and instruct the execution command 
+
+- To build an image!!
+  - `docker build -t <user_id>/<New_repo_name> .` -> `.` to run the command
+## Syntax for Dockerfile
+- `FROM` -> User to tell docker which base image to use to build our `nginx as base image` 
+- `LABEL MAINTAINER=msokol@spartaglobal.com`
+- `COPY` -> files/folders from localhost to the container/image 
+- `EXPOSE` -> Default port
+- `CMD` -> The execution command  e.g. `["nginx", "-g", "daemon off;"]`
