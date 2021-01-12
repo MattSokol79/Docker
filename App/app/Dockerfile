@@ -2,7 +2,7 @@
 FROM node:latest
 
 # Who edited this docker file
-LABEL MAINTAINER-msokol@spartaglobal.com
+LABEL MAINTAINER=msokol@spartaglobal.com
 
 # Choose the working directory
 WORKDIR /usr/src/app

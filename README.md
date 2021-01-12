@@ -59,6 +59,7 @@
   - `docker run -d -p localhost-port:container-port <image>`
   - e.g. `docker run -d -p 4001:4000 image` -> It will run on `localhost:4001` NOT `4000` as before
 
+# Hosting a static website inside a container using nginx webserver
 ### Adding html to nginx IMPORTANT!!!!!
 - Create a `index.html` file with some text 
 - `docker exec -it <ID of nginx> bash` -> Didnt work on windows Bash
@@ -116,3 +117,18 @@
 - `COPY` -> files/folders from localhost to the container/image 
 - `EXPOSE` -> Default port
 - `CMD` -> The execution command  e.g. `["nginx", "-g", "daemon off;"]`
+
+# Microservices Architecture
+- **Microservices** are small loosely coupled services that each serve a singular function and communicate together to collectively build an application. Each service is flexible, robust, composable and complete. They run as autonomous processes and communicate with one another through APIs. Each microservice can be implemented in a different programming language on a different platform. Almost any infrastructure can run in a container which holds services encapsulated for operation. Since these containers can be operated in parallel, the existing infrastructure is easier to maintain.
+
+- **Monolith** -> Code’s components are designed to work together, as one cohesive unit, sharing the same memory space. The software built using a monolith approach is self-contained; its components are interconnected and interdependent. If developers want to make any changes or updates to a monolith system, they need to build and deploy the entire stack at once. It’s the same thing with scalability: the entire system, not just the modules in it, is scaled together. With the monolithic architecture it can be difficult to adopt a new technology stack, and in case you want to use a new platform or framework, you’ll have to rewrite the entire solution.
+
+**Benefits of Microservices**
+1. Easier to build and maintain apps -> Applications become easier to build and maintain when they’re split into a set of smaller, composable fragments. Managing the code also becomes less painful because each microservice is, in fact, a separate chunk of code
+2. Flexibility in tech and scalability
+3. Improved Productivity and Speed
+4. Autonomous, Cross-functional Teams -> Microservices grant the developers more independence to work autonomously and make technical decisions quickly in smaller groups
+
+**When would you not use microservices?**
+- Small projects that do not require or can afford large amounts of resources as that increases cost and complicates programs
+  - e.g. Fast food shop wants a website, too costly to use microservices so just simply use a monolith structure
