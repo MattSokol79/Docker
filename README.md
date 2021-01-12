@@ -44,7 +44,7 @@
 
 - `-d` means detached and `-p` means ports and you specify the ports after, the first being the port be can use to connect from localhost and second is the one docker will use
 - `docker run -d -p 80:80 nginx` -> Installs nginx on `localhost:80` in seconds
-- `docker run -d -p 2368:2369 ghost` -> Installs ghost on `localhost:2368` in browser
+- `docker run -d -p 2368:2368 ghost` -> Installs ghost on `localhost:2368` in browser
 
 ### Making docker docs available on our localhost
 - `docker run -d -p 4000:4000 docs/docker.github.io` -> Downloads DockerHub onto `localhost:4000`
