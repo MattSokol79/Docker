@@ -38,9 +38,15 @@
 - `docker stop <name_of_image/container_id>` -> Stops container
 - `docker rm <name_of_image/container_id>` -> Removes container
 - `docker ps and ps -a <name_of_image/container_id>` -> to check the existing containers like `ls` !!!
+  
+
+- `docker history <image_id>`
+- `docker inspect <image_id>`
+- `docker logs <container_id>`
 
 ## Logging into a running container 
 - `docker exec -it <name_of_image/container_id>` -> Go inside the container very similar to `vagrant up and ssh into that vm` -> ***MUCH FASTER*** THAN vagrant 
+  - `-it` -> Interactive Shell
 
 - `-d` means detached and `-p` means ports and you specify the ports after, the first being the port be can use to connect from localhost and second is the one docker will use
 - `docker run -d -p 80:80 nginx` -> Installs nginx on `localhost:80` in seconds
@@ -85,3 +91,11 @@
     - e.g. `docker run -d -p 99:80 matt791/eng74-matt-docker`
 
 ### Connect DockerHub to GitHub by navigating to the Account Settings
+***- Helps us create webhooks V. USEFUL with Jenkins***
+
+## Logs
+- `docker exec -it <ID of nginx> bash`
+  - cd /var/log/nginx
+
+- To save logs in a file on localhost:
+  - `docker logs <container_id> >> nginx_logs.txt`
