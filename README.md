@@ -12,7 +12,7 @@
 
 [Docker Overview](https://docs.docker.com/get-started/overview/)
 
-## Why Docker
+## Why Docker over other containerisation software?
 - Multi billion dollar companies are using or adapting Docker i.e. Ebay, Netflix, Sky 
 - Docker adoption is anticipated by 50% by the end of 2020 
 - It allows us to deliver software faster! Much more light weight than Vagrant and other software
@@ -28,6 +28,7 @@
 
 ## Docker Commands
 - `docker pull <name_of_image>` 
+- `docker push <dockerid/docker_repo_name:tagname>` -> Pushes to docker hub repository to make changes available globally
 - `docker run <name_of_image> or hello-world` -> To see docker installation running correctly
 - `docker build -t <name_of_image>`
 - `docker commit <name_of_image/container_id>`  
@@ -68,3 +69,19 @@
 - `docker cp filepath/filename <container_id>:filepath/filename` 
 - e.g.:
 - `docker cp index.html 13f11cef9fcd:usr/share/nginx/html/index.html`
+
+### Pushing changes to your Docker Hub repository
+- Ensure container is running
+- `docker commit <container_id> <user_id>/<repo_name>`
+- `docker push <user_id>/<repo_name>`
+- Now changes should be visible as `latest` on docker hub
+  - You can alternatively add a tag to the end of the commit to name it a specific version of working e.g. `v1`
+
+### Running images FROM DockerHub on your localhost
+- Now REMOVE from localhost, only need to pull from our Repos!
+  - Remove the created Docker image from `docker images`
+  - Run on a desired port any image from the internet
+  - `docker run -d -p <localport>:<containerport> <user_id>/<repo_name>`
+    - e.g. `docker run -d -p 99:80 matt791/eng74-matt-docker`
+
+### Connect DockerHub to GitHub by navigating to the Account Settings
