@@ -132,3 +132,6 @@
 **When would you not use microservices?**
 - Small projects that do not require or can afford large amounts of resources as that increases cost and complicates programs
   - e.g. Fast food shop wants a website, too costly to use microservices so just simply use a monolith structure
+
+Why is Docker so popular?
+
