@@ -1,6 +1,6 @@
 # Docker
 - Containerisation - Packaging code together which can be ran from any environment
-- Containerisation software is very light weight compared to vagrant, or other software i.e. its Faster!
+
 ## What is Docker?
 
 ![](img/Docker.png)
@@ -17,11 +17,14 @@
 - Docker adoption is anticipated by 50% by the end of 2020 
 - It allows us to deliver software faster! Much more light weight than Vagrant and other software
 
+**Why is Docker so popular?**
+- Docker is popular because it has revolutionized development. Docker, and the containers it makes possible, has revolutionized the software industry and in five short years their popularity as a tool and platform has skyrocketed. The main reason is that containers create vast economies of scale.
+
 ## What is the difference between a VM and Docker
 
 ![](img/docker_explained.svg)
 
-- Docker is light weight and user friendly 
+- Docker is light weight and user friendly -> i.e. much faster than Vagrant!
 - Docker shares the resources of OS as opposed to using the OS completely 
 - Docker engine connects the container with OS and only uses the resources required
 - VM works with Hypervisor to connect guest OS/VM with Host OS/server
@@ -111,6 +114,10 @@
 
 - To build an image!!
   - `docker build -t <user_id>/<New_repo_name> .` -> `.` to run the command
+
+**To properly run the app from the image:**
+- `docker run -d --name nodejs_app -p 80:3000 matt791/eng74-matt-app-docker`
+  
 ## Syntax for Dockerfile
 - `FROM` -> User to tell docker which base image to use to build our `nginx as base image` 
 - `LABEL MAINTAINER=msokol@spartaglobal.com`
@@ -119,6 +126,9 @@
 - `CMD` -> The execution command  e.g. `["nginx", "-g", "daemon off;"]`
 
 # Microservices Architecture
+
+![](img/microservices.PNG)
+
 - **Microservices** are small loosely coupled services that each serve a singular function and communicate together to collectively build an application. Each service is flexible, robust, composable and complete. They run as autonomous processes and communicate with one another through APIs. Each microservice can be implemented in a different programming language on a different platform. Almost any infrastructure can run in a container which holds services encapsulated for operation. Since these containers can be operated in parallel, the existing infrastructure is easier to maintain.
 
 - **Monolith** -> Code’s components are designed to work together, as one cohesive unit, sharing the same memory space. The software built using a monolith approach is self-contained; its components are interconnected and interdependent. If developers want to make any changes or updates to a monolith system, they need to build and deploy the entire stack at once. It’s the same thing with scalability: the entire system, not just the modules in it, is scaled together. With the monolithic architecture it can be difficult to adopt a new technology stack, and in case you want to use a new platform or framework, you’ll have to rewrite the entire solution.
@@ -133,5 +143,20 @@
 - Small projects that do not require or can afford large amounts of resources as that increases cost and complicates programs
   - e.g. Fast food shop wants a website, too costly to use microservices so just simply use a monolith structure
 
-Why is Docker so popular?
 
+### Kubernetes (K8)
+
+![](img/k8.png)
+
+- An orcheastration tool
+- Helps manage containers and their behaviour -> If something goes wrong with a container, K8 has the ability to spin up another one
+  - Has self-healing benefits! Application is always up and running 
+- Deals with web facing interfaces
+- Can deploy our application with K8 instead of AWS 
+- Highly desired in the market 
+- Uses ingress and egress controller
+  - No need to manually do it on AWS
+
+**Analogy**
+- Knowing K8 is like driving a Manual, once you learn how to drive manual, automatic is really simple
+  - Automatic is AWS -> Clicking around instead of writing the infrastructure
