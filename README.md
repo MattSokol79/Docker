@@ -160,3 +160,9 @@
 **Analogy**
 - Knowing K8 is like driving a Manual, once you learn how to drive manual, automatic is really simple
   - Automatic is AWS -> Clicking around instead of writing the infrastructure
+
+
+## Interview info
+- Client is Sparta -> Questions ready
+- Mostly about DevOps NOT coding
+- 
